@@ -4,21 +4,42 @@
 /* must be accompanied by the FIRST BSD license file in the root directory of */
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-package frc.robot.subsystems;
+import edu.wpi.first.wpilibj.SpeedControllerGroup;
+import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.RobotMap;
+/**
+ * Add your docs here.
+ */
+public class DriveTrain extends Subsystem {
+  private WPI_TalonSRX leftMotor1;
+  private WPI_TalonSRX leftMotor2;
+  private WPI_TalonSRX rightMotor1;
+  private WPI_TalonSRX rightMotor2;
 
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
+  private SpeedControllerGroup rightMotors;
+  private SpeedControllerGroup leftMotors;
 
-public class DriveTrain extends SubsystemBase {
-  /**
-   * Creates a new DriveTrain.
-   */
-  public DriveTrain() {
-
-  }
+  // Put methods for controlling this subsystem
+  // here. Call these from Commands.
 
   @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
+    this.leftMotor1 = new WPI_TalonSRX(RobotMap.leftMotor1);
+    this.leftMotor2 = new WPI_TalonSRX(RobotMap.leftMotor2);
+    this.rightMotor1 = new WPI_TalonSRX(RobotMap.rightMotor1);
+    this.rightMotor2 = new WPI_TalonSRX(RobotMap.rightMotor2);
+
+
+    this.leftMotors = new SpeedControllerGroup(this.leftMotor1, this.leftMotor2);
+    this.rightMotors = new SpeedControllerGroup(this.rightMotor1, this.rightMotor2);
+
+
+
+
+
   }
 }
