@@ -14,6 +14,7 @@ import edu.wpi.first.wpilibj.Spark;
  * An example subsystem.  You can replace me with your own Subsystem.
  */
 public class ExampleSubsystem extends Subsystem {
+  Spark motor;
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
