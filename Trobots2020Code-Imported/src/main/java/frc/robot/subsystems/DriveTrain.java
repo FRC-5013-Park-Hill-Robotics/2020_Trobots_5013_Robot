@@ -26,10 +26,7 @@ public class DriveTrain extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  @Override
-  public void initDefaultCommand() {
-    // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+  public DriveTrain(){
     this.leftMotor1 = new WPI_TalonSRX(RobotMap.leftMotor1);
     this.leftMotor2 = new WPI_TalonSRX(RobotMap.leftMotor2);
     this.rightMotor1 = new WPI_TalonSRX(RobotMap.rightMotor1);
@@ -43,5 +40,12 @@ public class DriveTrain extends Subsystem {
 
 
 
+  }
+
+  @Override
+  public void initDefaultCommand() {
+    // Set the default command for a subsystem here.
+    // setDefaultCommand(new MySpecialCommand());
+   
   }
 }
