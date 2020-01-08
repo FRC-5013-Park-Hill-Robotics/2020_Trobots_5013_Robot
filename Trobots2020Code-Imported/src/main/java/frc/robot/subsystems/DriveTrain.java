@@ -31,10 +31,10 @@ public class DriveTrain extends Subsystem {
   // here. Call these from Commands.
 
   public DriveTrain(){
-    this.leftMotor1 = new WPI_TalonFX(RobotMap.leftMotor1);
-    this.leftMotor2 = new WPI_TalonFX(RobotMap.leftMotor2);
-    this.rightMotor1 = new WPI_TalonFX(RobotMap.rightMotor1);
-    this.rightMotor2 = new WPI_TalonFX(RobotMap.rightMotor2);
+    this.leftMotor1 = new WPI_TalonFX(RobotMap.LEFT_MOTOR_1);
+    this.leftMotor2 = new WPI_TalonFX(RobotMap.LEFT_MOTOR_2);
+    this.rightMotor1 = new WPI_TalonFX(RobotMap.RIGHT_MOTOR_1);
+    this.rightMotor2 = new WPI_TalonFX(RobotMap.RIGHT_MOTOR_2);
 
 
     this.leftMotors = new SpeedControllerGroup(this.leftMotor1, this.leftMotor2);
