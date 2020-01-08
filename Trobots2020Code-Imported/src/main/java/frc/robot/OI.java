@@ -14,7 +14,11 @@ import edu.wpi.first.wpilibj.XboxController;
  * interface to the commands and command groups that allow control of the robot.
  */
 public class OI {
-  XboxController controller;
+  private XboxController controller = new XboxController(RobotMap.DRIVER_CONTROLLER);
+
+  public double GetDriverRawAxis(int axis){
+    return controller.getRawAxis(axis);
+  }
   //// CREATING BUTTONS
   // One type of button is a joystick button which is any button on a
   //// joystick.
